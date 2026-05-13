@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Seguridad Informática</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  padding:20px;
+  background:linear-gradient(135deg,#dbeafe,#fef3c7,#dcfce7);
+  color:#222;
+}
+
+.contenedor{
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  color:#1e3a8a;
+  font-size:42px;
+}
+
+h2{
+  color:#2563eb;
+}
+
+.tarjeta{
+  background:white;
+  padding:25px;
+  margin:22px 0;
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:15px;
+}
+
+.caja{
+  background:#e0f2fe;
+  border:3px solid #38bdf8;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+  font-size:18px;
+}
+
+.caja:nth-child(2){background:#dcfce7;border-color:#22c55e;}
+.caja:nth-child(3){background:#fef9c3;border-color:#eab308;}
+.caja:nth-child(4){background:#fce7f3;border-color:#ec4899;}
+.caja:nth-child(5){background:#ede9fe;border-color:#8b5cf6;}
+
+.destacado{
+  background:#fef08a;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.puntos{
+  position:sticky;
+  top:10px;
+  background:#fef08a;
+  border:4px solid #eab308;
+  padding:14px;
+  border-radius:18px;
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+  z-index:10;
+}
+
+button{
+  padding:14px;
+  margin:8px 0;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  background:#2563eb;
+  color:white;
+}
+
+button:hover{
+  background:#1d4ed8;
+}
+
+.opcion{
+  width:100%;
+  background:#7c3aed;
+}
+
+.correcto{
+  background:#16a34a !important;
+}
+
+.incorrecto{
+  background:#dc2626 !important;
+}
+
+textarea,input,select{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border-radius:12px;
+  border:2px solid #93c5fd;
+  box-sizing:border-box;
+  margin:8px 0 18px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.frase{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin:20px 0;
+}
+
+.letra{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  border:3px solid #38bdf8;
+  background:#e0f2fe;
+  line-height:40px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.espacio{
+  width:25px;
+}
+
+.teclado{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:7px;
+}
+
+.teclado button{
+  width:auto;
+  padding:10px 13px;
+}
+
+p,li{
+  font-size:18px;
+  line-height:1.6;
+}
+
+.caso{
+  background:#f3e8ff;
+  border-left:8px solid #9333ea;
+}
+
+.final{
+  background:#ecfccb;
+  border-left:8px solid #65a30d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>🔐 Seguridad Informática</h1>
+
+<div class="puntos">
+⭐ Puntos: <span id="puntos">0</span>
+</div>
+
+<div class="tarjeta">
+<h2>1. Resumen del tema</h2>
+
+<p>
+La seguridad informática consiste en proteger los sistemas, los dispositivos,
+las redes y la información frente a riesgos, errores, accesos no autorizados,
+robos o ataques.
+</p>
+
+<div class="destacado">
+El objetivo principal es proteger la información.
+</div>
+</div>
+
+<div class="tarjeta">
+<h2>2. Los tres pilares de la seguridad</h2>
+
+<div class="grid">
+  <div class="caja">
+    🔒 <strong>Confidencialidad</strong><br>
+    Solo ven la información las personas autorizadas.
+  </div>
+
+  <div class="caja">
+    ✅ <strong>Integridad</strong><br>
+    La información no se modifica sin permiso.
+  </div>
+
+  <div class="caja">
+    🟢 <strong>Disponibilidad</strong><br>
+    La información está accesible cuando se necesita.
+  </div>
+</div>
+</div>
+
+<div class="tarjeta">
+<h2>3. Tipos de conexiones</h2>
+
+<div class="grid">
+  <div class="caja">📶 <strong>Wi-Fi</strong><br>Conexión inalámbrica.</div>
+  <div class="caja">🔌 <strong>Ethernet</strong><br>Conexión por cable.</div>
+  <div class="caja">🎧 <strong>Bluetooth</strong><br>Conexión cercana entre dispositivos.</div>
+  <div class="caja">💳 <strong>NFC</strong><br>Conexión muy cercana para pagos.</div>
+  <div class="caja">🛡️ <strong>VPN</strong><br>Conexión segura y cifrada.</div>
+</div>
+</div>
+
+<div class="tarjeta">
+<h2>4. Riesgos de conexiones no seguras</h2>
+
+<ul>
+  <li>Robo de contraseñas o datos personales.</li>
+  <li>Infección por malware.</li>
+  <li>Suplantación de identidad.</li>
+  <li>Espionaje de lo que haces en Internet.</li>
+  <li>Uso de tu red para actividades ilegales.</li>
+</ul>
+</div>
+
+<div class="tarjeta">
+<h2>5. Wi-Fi pública</h2>
+
+<p>
+Una red Wi-Fi pública puede ser útil, pero también peligrosa.
+En cafeterías, aeropuertos o centros comerciales, otras personas podrían intentar
+interceptar información si la red no es segura.
+</p>
+
+<div class="destacado">
+En una Wi-Fi pública no conviene acceder al banco ni escribir contraseñas importantes.
+</div>
+</div>
+
+<div class="tarjeta">
+<h2>🎮 Juego 1: Preguntas rápidas</h2>
+
+<p id="pregunta"></p>
+
+<button class="opcion" id="op1" onclick="responder(0)"></button>
+<button class="opcion" id="op2" onclick="responder(1)"></button>
+<button class="opcion" id="op3" onclick="responder(2)"></button>
+
+<p id="mensajePregunta"></p>
+
+<button onclick="nuevaPregunta()">Nueva pregunta</button>
+</div>
+
+<div class="tarjeta">
+<h2>🎮 Juego 2: Adivina la frase</h2>
+
+<p>
+Pulsa letras para descubrir una frase relacionada con la seguridad informática.
+</p>
+
+<div class="frase" id="frase"></div>
+
+<div class="teclado" id="teclado"></div>
+
+<p id="mensajeFrase"></p>
+
+<button onclick="nuevaFrase()">Nueva frase</button>
+</div>
+
+<div class="tarjeta caso">
+<h2>🧠 Casos prácticos</h2>
+
+<p><strong>Caso 1:</strong> Estás en una cafetería y ves una red Wi-Fi abierta llamada “WiFi Gratis”. Quieres entrar en tu banco.</p>
+<p>¿Qué harías?</p>
+<select id="caso1" onchange="comprobarCaso(1)">
+  <option value="">Elige una respuesta</option>
+  <option value="mal">Entraría al banco porque la red es gratis.</option>
+  <option value="bien">No entraría al banco desde una Wi-Fi pública.</option>
+  <option value="mal">Le daría mi contraseña a un amigo.</option>
+</select>
+
+<p><strong>Caso 2:</strong> Tu ordenador empieza a ir muy lento después de descargar un archivo extraño.</p>
+<p>¿Qué puede haber pasado?</p>
+<select id="caso2" onchange="comprobarCaso(2)">
+  <option value="">Elige una respuesta</option>
+  <option value="mal">Nada, seguro que es normal.</option>
+  <option value="bien">Puede que tenga malware.</option>
+  <option value="mal">Internet se ha apagado.</option>
+</select>
+
+<p><strong>Caso 3:</strong> Alguien entra en tu cuenta y cambia tu contraseña.</p>
+<p>¿Qué pilar de seguridad se ha roto principalmente?</p>
+<select id="caso3" onchange="comprobarCaso(3)">
+  <option value="">Elige una respuesta</option>
+  <option value="bien">Confidencialidad.</option>
+  <option value="mal">Disponibilidad solamente.</option>
+  <option value="mal">Ninguno.</option>
+</select>
+
+<p id="mensajeCasos"></p>
+</div>
+
+<div class="tarjeta">
+<h2>✍️ Preguntas de reflexión</h2>
+
+<label>Nombre del alumno/a:</label>
+<input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+<p>1. Explica con tus palabras qué es la seguridad informática.</p>
+<textarea id="r1"></textarea>
+
+<p>2. ¿Cuál de los tres pilares te parece más importante: confidencialidad, integridad o disponibilidad? Explica por qué.</p>
+<textarea id="r2"></textarea>
+
+<p>3. ¿Crees que una Wi-Fi pública puede ser peligrosa? Pon un ejemplo.</p>
+<textarea id="r3"></textarea>
+
+<p>4. ¿Es justo que el propietario de una red tenga problemas si otra persona usa su conexión para hacer algo ilegal? Razona tu respuesta.</p>
+<textarea id="r4"></textarea>
+
+<p>5. Escribe tres consejos para usar Internet de forma más segura.</p>
+<textarea id="r5"></textarea>
+</div>
+
+<div class="tarjeta final">
+<h2>📥 Descargar respuestas</h2>
+
+<p>
+Cuando termines, descarga tus respuestas y entrégalas según indique tu profesora.
+</p>
+
+<button onclick="descargar()">Descargar mi actividad</button>
+</div>
+
+</div>
+
+<script>
+let puntos = 0;
+
+function sumar(cantidad){
+  puntos += cantidad;
+  document.getElementById("puntos").textContent = puntos;
+}
+
+const preguntas = [
+  {
+    texto:"¿Qué significa confidencialidad?",
+    opciones:["Solo acceden personas autorizadas","Los datos se borran solos","Internet funciona más rápido"],
+    correcta:0
+  },
+  {
+    texto:"¿Qué significa integridad?",
+    opciones:["Los datos no se modifican sin permiso","Los datos se publican en redes","La red es inalámbrica"],
+    correcta:0
+  },
+  {
+    texto:"¿Qué significa disponibilidad?",
+    opciones:["Los datos están accesibles cuando se necesitan","La contraseña es corta","El móvil tiene batería"],
+    correcta:0
+  },
+  {
+    texto:"¿Qué conexión suele ser más estable?",
+    opciones:["Ethernet","Bluetooth","NFC"],
+    correcta:0
+  },
+  {
+    texto:"¿Para qué sirve una VPN?",
+    opciones:["Para crear una conexión segura y cifrada","Para cargar el móvil","Para borrar archivos"],
+    correcta:0
+  },
+  {
+    texto:"¿Qué riesgo tiene una Wi-Fi pública?",
+    opciones:["Pueden interceptar datos","Siempre es más rápida","No tiene ningún riesgo"],
+    correcta:0
+  }
+];
+
+let preguntaActual;
+
+function nuevaPregunta(){
+  preguntaActual = preguntas[Math.floor(Math.random()*preguntas.length)];
+
+  document.getElementById("pregunta").textContent = preguntaActual.texto;
+  document.getElementById("op1").textContent = preguntaActual.opciones[0];
+  document.getElementById("op2").textContent = preguntaActual.opciones[1];
+  document.getElementById("op3").textContent = preguntaActual.opciones[2];
+
+  document.getElementById("op1").className = "opcion";
+  document.getElementById("op2").className = "opcion";
+  document.getElementById("op3").className = "opcion";
+
+  document.getElementById("mensajePregunta").textContent = "";
+}
+
+function responder(num){
+  const botones = [
+    document.getElementById("op1"),
+    document.getElementById("op2"),
+    document.getElementById("op3")
+  ];
+
+  if(num === preguntaActual.correcta){
+    botones[num].classList.add("correcto");
+    document.getElementById("mensajePregunta").textContent = "✅ Correcto";
+    sumar(10);
+  }else{
+    botones[num].classList.add("incorrecto");
+    document.getElementById("mensajePregunta").textContent = "❌ Incorrecto. Vuelve a intentarlo.";
+  }
+}
+
+const frases = [
+  "LA CONFIDENCIALIDAD PROTEGE LOS DATOS",
+  "LA INTEGRIDAD EVITA CAMBIOS SIN PERMISO",
+  "LA DISPONIBILIDAD MANTIENE LOS SERVICIOS",
+  "UNA VPN CIFRA LA CONEXION",
+  "NO USES EL BANCO EN WIFI PUBLICA",
+  "EL MALWARE PUEDE ROBAR INFORMACION"
+];
+
+let fraseActual = "";
+let letrasAdivinadas = [];
+
+function nuevaFrase(){
+  fraseActual = frases[Math.floor(Math.random()*frases.length)];
+  letrasAdivinadas = [];
+  document.getElementById("mensajeFrase").textContent = "";
+  crearTeclado();
+  mostrarFrase();
+}
+
+function crearTeclado(){
+  const letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+  const teclado = document.getElementById("teclado");
+  teclado.innerHTML = "";
+
+  for(let letra of letras){
+    const boton = document.createElement("button");
+    boton.textContent = letra;
+    boton.onclick = function(){
+      probarLetra(letra, boton);
+    };
+    teclado.appendChild(boton);
+  }
+}
+
+function mostrarFrase(){
+  const contenedor = document.getElementById("frase");
+  contenedor.innerHTML = "";
+
+  for(let letra of fraseActual){
+    if(letra === " "){
+      const espacio = document.createElement("div");
+      espacio.className = "espacio";
+      contenedor.appendChild(espacio);
+    }else{
+      const casilla = document.createElement("div");
+      casilla.className = "letra";
+      casilla.textContent = letrasAdivinadas.includes(letra) ? letra : "";
+      contenedor.appendChild(casilla);
+    }
+  }
+
+  comprobarFraseCompleta();
+}
+
+function probarLetra(letra, boton){
+  boton.disabled = true;
+
+  if(fraseActual.includes(letra)){
+    boton.classList.add("correcto");
+    letrasAdivinadas.push(letra);
+    document.getElementById("mensajeFrase").textContent = "✅ Letra correcta";
+    sumar(5);
+  }else{
+    boton.classList.add("incorrecto");
+    document.getElementById("mensajeFrase").textContent = "❌ Esa letra no aparece";
+  }
+
+  mostrarFrase();
+}
+
+function comprobarFraseCompleta(){
+  let completa = true;
+
+  for(let letra of fraseActual){
+    if(letra !== " " && !letrasAdivinadas.includes(letra)){
+      completa = false;
+    }
+  }
+
+  if(completa){
+    document.getElementById("mensajeFrase").textContent = "🎉 Frase completada";
+    sumar(20);
+  }
+}
+
+let casosResueltos = {
+  1:false,
+  2:false,
+  3:false
+};
+
+function comprobarCaso(numero){
+  const valor = document.getElementById("caso" + numero).value;
+
+  if(valor === "bien" && !casosResueltos[numero]){
+    document.getElementById("mensajeCasos").textContent = "✅ Buen razonamiento";
+    sumar(15);
+    casosResueltos[numero] = true;
+  }else if(valor === "mal"){
+    document.getElementById("mensajeCasos").textContent = "❌ Revisa el resumen y vuelve a intentarlo";
+  }
+}
+
+function descargar(){
+  let nombre = document.getElementById("nombre").value.trim();
+
+  if(nombre === ""){
+    nombre = "alumno";
+  }
+
+  const contenido = `
+ACTIVIDAD: SEGURIDAD INFORMÁTICA
+
+Alumno/a: ${nombre}
+
+Puntos conseguidos: ${puntos}
+
+========================
+CASOS PRÁCTICOS
+========================
+
+Caso 1:
+${document.getElementById("caso1").selectedOptions[0].text}
+
+Caso 2:
+${document.getElementById("caso2").selectedOptions[0].text}
+
+Caso 3:
+${document.getElementById("caso3").selectedOptions[0].text}
+
+========================
+PREGUNTAS DE REFLEXIÓN
+========================
+
+1. ¿Qué es la seguridad informática?
+${document.getElementById("r1").value}
+
+2. Pilar más importante y por qué:
+${document.getElementById("r2").value}
+
+3. Riesgo de una Wi-Fi pública:
+${document.getElementById("r3").value}
+
+4. Responsabilidad del propietario de una red:
+${document.getElementById("r4").value}
+
+5. Tres consejos de seguridad:
+${document.getElementById("r5").value}
+`;
+
+  const archivo = new Blob([contenido], {type:"text/plain;charset=utf-8"});
+  const enlace = document.createElement("a");
+
+  enlace.href = URL.createObjectURL(archivo);
+  enlace.download = "seguridad_informatica_" + nombre.replaceAll(" ","_") + ".txt";
+  enlace.click();
+
+  URL.revokeObjectURL(enlace.href);
+}
+
+nuevaPregunta();
+nuevaFrase();
+</script>
+
+</body>
+</html>
